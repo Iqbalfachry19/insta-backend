@@ -2,9 +2,9 @@ const express = require("express");
 const app = express();
 const server = require("http").Server(app);
 const io = require("socket.io")(server);
-
+require("dotenv");
 let users = [];
-const port = 3001;
+const port = proccess.env.PORT || 3001;
 app.get("/", (req, res) => {
   res.send("Hello World");
 });
